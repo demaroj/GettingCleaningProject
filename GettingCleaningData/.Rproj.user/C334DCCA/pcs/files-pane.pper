@@ -1,0 +1,9 @@
+{
+    "path" : "C:/RPrograms/GettingCleaningProject/GettingCleaningData/UCI HAR Dataset/test",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
