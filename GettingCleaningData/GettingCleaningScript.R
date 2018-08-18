@@ -7,8 +7,16 @@ unzip(tf, exdir = td <- file.path(tempdir(), "myzip"))
 (list.files(td, full.names = TRUE, recursive = TRUE))
 #list(tempdir())
 
-
 x_testdata <- read.table(file.path(tempdir(), "/myzip/UCI HAR Dataset/test/X_test.txt"))
+x_traindata <- read.table(file.path(tempdir(), "/myzip/UCI HAR Dataset/train/X_train.txt"))
+y_testdata <- read.table(file.path(tempdir(), "/myzip/UCI HAR Dataset/test/y_test.txt"))
+y_traindata <- read.table(file.path(tempdir(), "/myzip/UCI HAR Dataset/train/y_train.txt"))
+subject_testdata <- read.table(file.path(tempdir(), "/myzip/UCI HAR Dataset/test/subject_test.txt"))
+subject_traindata <- read.table(file.path(tempdir(), "/myzip/UCI HAR Dataset/train/subject_train.txt"))
 
+colLabels <- read.table(file.path(tempdir(), "/myzip/UCI HAR Dataset/features.txt"))
 
-head(x_testdata)
+testdata <- cbind(subject_testdata, y_testdata, x_testdata)
+traindata <-cbind(subject_traindata, y_traindata, x_traindata)
+
+dataset <- rbind(testdata, traindata)
